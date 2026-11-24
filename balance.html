@@ -1,40 +1,45 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PLAY CHEERLEADING</title>
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer>
-</script>
-</head>
-<body>
-<header>
-<span class="brand">✦ PLAY CHEERLEADING</span>
-<a class="homeButton" href="index.html">
-<span class="house">⌂</span> HOME</a>
-</header>
-<main>
-<section id="balance" class="page">
-<p class="tag">STUNT GAME ♡</p>
-<h2>플라이어 균형 맞추기</h2>
-<p>백스팟이 되어 좌우 방향키로 균형을 잡아 보세요!</p>
-<div class="stage balanceStage">
-<div class="guide">
-</div>
-<div id="tilt">
-</div>
-</div>
-<h3 id="angle">0.0°</h3>
-<progress id="progress" max="5" value="0">
-</progress>
-<p id="balanceStatus" aria-live="polite">연속 5초 동안 좌우 10° 이내를 유지하세요.</p>
-<div class="buttons">
-<button onclick="startBalance()">도전하기</button>
-</div>
-<a class="next" href="game.html">← 게임 선택하기</a>
-</section>
-</main>
-<footer>♡ PLAY · CHEER UP TOGETHER ♡</footer>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>PLAY CHEERLEADING</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="script.js" defer>
+		</script>
+	</head>
+	<body>
+		<header>
+			<span class="brand">✦ PLAY CHEERLEADING</span>
+			<a class="homeButton" href="index.html">
+				<span class="house">⌂</span> HOME
+			</a>
+		</header>
+		<main>
+			<section id="balance" class="page">
+				<p class="tag">STUNT GAME ♡</p>
+				<h2>플라이어 균형 맞추기</h2>
+				<p>백스팟이 되어 좌우 방향키로 균형을 잡아 보세요!</p>
+				<div class="stage balanceStage">
+					<div class="guide">
+					</div>
+					<div id="tilt">
+					</div>
+				</div>
+				<h3 id="angle">0.0°</h3>
+				<progress id="progress" max="5" value="0">
+				</progress>
+				<p id="balanceStatus" aria-live="polite">연속 5초 동안 좌우 10° 이내를 유지하세요.</p>
+				<div class="buttons">
+					<button onclick="startBalance()">도전하기</button>
+				</div>
+				<a class="next" href="game.html">← 게임 선택하기</a>
+			</section>
+		</main>
+		<footer>
+			♡ PLAY · CHEER UP TOGETHER ♡
+			<br>
+			<a href="https://y0seo07.github.io/cheerleading/" style="color: inherit; overflow-wrap: anywhere;">https://y0seo07.github.io/cheerleading/</a>
+		</footer>
+	</body>
 </html>
