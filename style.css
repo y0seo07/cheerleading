@@ -1,0 +1,1060 @@
+/* 전체 색상과 화면 배치 */
+* {
+	box-sizing:border-box
+}
+[hidden] {
+	display:none!important
+}
+body {
+	margin:0;
+	min-height:100vh;
+	font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+	color:#315b96;
+	background:radial-gradient(circle at 15% 20%,#fff 0 5px,transparent 6px),radial-gradient(circle at 85% 75%,#fff 0 4px,transparent 5px),linear-gradient(135deg,#eaf5ff,#cce2ff);
+	background-size:90px 90px,110px 110px,auto;
+	transition:background .7s,color .7s
+}
+header {
+	display:flex;
+	justify-content:space-between;
+	padding:22px max(5%,calc((100% - 950px)/2));
+	font-weight:bold;
+	gap:12px
+}
+a {
+	color:inherit;
+	text-decoration:none
+}
+main {
+	max-width:900px;
+	margin:15px auto;
+	padding:16px
+}
+.page {
+	text-align:center;
+	background:#ffffffc9;
+	border:3px solid white;
+	border-radius:36px;
+	padding:35px 22px;
+	box-shadow:0 12px 35px #5689c51c;
+	animation:appear .45s ease
+}
+h1 {
+	font-size:clamp(32px,6vw,58px);
+	line-height:1.25;
+	margin:20px 0;
+	color:#2859a4
+}
+h2 {
+	font-size:clamp(26px,5vw,38px);
+	margin:12px 0
+}
+p {
+	line-height:1.6
+}
+.tag {
+	letter-spacing:3px;
+	font-size:12px;
+	font-weight:bold;
+	color:#6295d8
+}
+button,.next,.file {
+	font:inherit;
+	font-weight:bold;
+	color:#315b96;
+	background:#e4f0ff;
+	border:2px solid #c0d9fc;
+	border-radius:18px;
+	padding:12px 18px;
+	cursor:pointer;
+	transition:transform .2s,background .2s
+}
+button:hover,.next:hover,.file:hover,nav a:hover,.choices a:hover {
+	transform:translateY(-4px);
+	background:#d0e5ff
+}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible {
+	outline:3px solid #3677cf;
+	outline-offset:3px
+}
+.megaphone {
+	background:none;
+	border:0;
+	width:min(300px,90%);
+	animation:bob 2s infinite
+}
+.megaphone:hover {
+	background:none
+}
+nav,.choices,.buttons,.slots,.bases {
+	display:flex;
+	justify-content:center;
+	gap:12px;
+	flex-wrap:wrap
+}
+nav a,.choices a {
+	background:#f0f7ff;
+	border:2px solid #d0e4ff;
+	border-radius:24px;
+	padding:20px;
+	transition:.2s;
+	animation:appear .5s both
+}
+nav a {
+	flex:1;
+	min-width:100px;
+	font-weight:bold;
+	font-size:20px
+}
+nav a:nth-child(2) {
+	animation-delay:.1s
+}
+nav a:nth-child(3) {
+	animation-delay:.2s
+}
+nav a:nth-child(4) {
+	animation-delay:.3s
+}
+.choices a {
+	width:min(280px,100%)
+}
+.choices svg {
+	height:220px;
+	width:100%
+}
+.stage {
+	background:linear-gradient(#eaf4ff,#f9fcff);
+	border:2px dashed #bad6f9;
+	border-radius:30px;
+	max-width:440px;
+	margin:20px auto;
+	padding:12px;
+	position:relative;
+	overflow:hidden
+}
+.stage svg {
+	height:260px;
+	max-width:100%;
+	display:block;
+	margin:auto
+}
+.next {
+	display:inline-block;
+	margin-top:24px
+}
+.note {
+	background:#eaf4ff;
+	border-radius:18px;
+	padding:20px;
+	margin:18px auto;
+	max-width:520px
+}
+.formation {
+	margin:auto;
+	max-width:480px;
+	background:#eef6ff;
+	border-radius:30px;
+	padding:15px
+}
+.formation button {
+	padding:5px;
+	background:white
+}
+.mini svg {
+	width:85px;
+	height:110px;
+	display:block
+}
+.flyer {
+	margin-bottom:5px
+}
+.slots label {
+	background:#eaf4ff;
+	padding:10px;
+	border-radius:15px;
+	display:grid;
+	gap:5px;
+	min-width:120px
+}
+.slots label.active {
+	background:#a9d0ff;
+	outline:2px solid #3976cf
+}
+select,input {
+	font:inherit;
+	max-width:100%;
+	color:inherit
+}
+select,input[type=number] {
+	padding:7px;
+	border:1px solid #b5d0f3;
+	border-radius:9px;
+	background:white
+}
+input[type=number] {
+	width:75px
+}
+.file input {
+	display:block;
+	max-width:220px;
+	margin:5px auto
+}
+.buttons {
+	align-items:center;
+	margin:15px 0
+}
+progress {
+	width:min(340px,90%);
+	height:20px;
+	accent-color:#5288d8
+}
+.balanceStage {
+	height:310px
+}
+#tilt {
+	transform-origin:50% 88%;
+	position:relative
+}
+.guide {
+	position:absolute;
+	left:50%;
+	top:10px;
+	bottom:20px;
+	border-left:2px dashed #9bbbe6
+}
+footer {
+	text-align:center;
+	padding:25px;
+	font-size:12px;
+	letter-spacing:2px
+}
+body.dark {
+	background:#090f20;
+	color:#dbe9ff
+}
+.dark .page {
+	background:#111d35;
+	border-color:#263a60;
+	box-shadow:0 0 60px #385c9b55
+}
+.dark .theater {
+	padding:25px 10px;
+	background:linear-gradient(120deg,#4268a955,transparent 40%),linear-gradient(240deg,#4268a955,transparent 40%),#070b16;
+	border-radius:24px;
+	margin:20px 0
+}
+video {
+	width:100%;
+	max-width:720px;
+	aspect-ratio:16/9;
+	background:#050812;
+	border-radius:12px
+}
+.dark .next,.dark .file {
+	background:#24385e;
+	color:white;
+	border-color:#42608c
+}
+@keyframes appear {
+	from {
+		opacity:0;
+		transform:translateY(12px)
+	}
+	to {
+		opacity:1;
+		transform:translateY(0)
+	}
+}
+@keyframes bob {
+	50% {
+		transform:translateY(-7px) rotate(-3deg)
+	}
+}
+@media(prefers-reduced-motion:reduce) {
+	* {
+		animation:none!important;
+		transition:none!important
+	}
+}
+@media(max-width:500px) {
+	.page {
+		padding:24px 12px
+	}
+	.mini svg {
+		width:65px
+	}
+	.bases {
+		gap:5px
+	}
+	header {
+		font-size:13px
+	}
+	.slots label {
+		min-width:100px
+	}
+}
+/* 수정된 메뉴와 게임 배치 */
+@font-face {
+	font-family:Seoyun;
+	src:url('seoyun.ttf') format('truetype');
+	font-display:swap
+}
+body,button,input,select,svg text {
+	font-family:Seoyun,'Apple SD Gothic Neo',sans-serif
+}
+.homeButton {
+	background:#2859a4;
+	color:white;
+	border-radius:18px;
+	padding:12px 24px;
+	box-shadow:0 4px 0 #173d79;
+	font-size:20px
+}
+header {
+	align-items:center;
+	position:sticky;
+	top:0;
+	z-index:10;
+	background:#eaf5fff2
+}
+.dark header {
+	background:#111d35
+}
+.menuLine {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	max-width:760px;
+	margin:30px auto;
+	gap:0
+}
+.menuLine .megaphone {
+	flex-shrink:0;
+	transition:width .6s;
+	animation:none;
+	padding:0
+}
+.menuLine.opened .megaphone {
+	width:32%
+}
+.menuLine nav {
+	flex:1;
+	display:flex;
+	flex-wrap:nowrap;
+	gap:0;
+	transform-origin:left;
+	animation:unfold .65s ease both;
+	background:#d5e8ff;
+	border-radius:0 24px 24px 0;
+	overflow:hidden
+}
+.menuLine nav a {
+	min-width:0;
+	flex:1;
+	padding:14px 5px;
+	border-radius:0;
+	border:0;
+	border-right:1px solid #a9c9f2;
+	font-size:clamp(14px,3vw,23px);
+	animation:none
+}
+.menuLine nav a:last-child {
+	background:#b6d4ff
+}
+@keyframes unfold {
+	from {
+		transform:scaleX(0);
+		opacity:0
+	}
+	to {
+		transform:scaleX(1);
+		opacity:1
+	}
+}
+.formation svg {
+	width:100%;
+	max-height:460px
+}
+.athlete {
+	cursor:pointer
+}
+.athlete:hover,.athlete:focus {
+	filter:drop-shadow(0 0 5px #548ddc);
+	outline:none
+}
+.slots,.palette {
+	display:grid;
+	grid-template-columns:repeat(4,minmax(0,1fr));
+	max-width:540px;
+	margin:20px auto;
+	gap:10px
+}
+.slot {
+	min-height:86px;
+	display:grid;
+	gap:5px;
+	padding:8px;
+	border-style:dashed
+}
+.slot strong {
+	font-size:24px
+}
+.slot.active,.palette .chosen {
+	background:#a9d0ff;
+	outline:2px solid #3976cf
+}
+.palette button {
+	padding:6px;
+	cursor:grab
+}
+.palette svg {
+	width:100%;
+	height:100px;
+	display:block
+}
+.palette {
+	margin-top:32px
+}
+.palette button:active {
+	cursor:grabbing
+}
+#compose .stage svg {
+	height:180px
+}
+@media(max-width:500px) {
+	.menuLine.opened .megaphone {
+		width:30%
+	}
+	.menuLine nav a {
+		padding:10px 2px
+	}
+	.slots,.palette {
+		gap:5px
+	}
+	.slot {
+		font-size:13px
+	}
+	.palette svg {
+		height:70px
+	}
+}
+/* 귀여운 스티커와 소개 카드 */
+body:not(.dark) {
+	background-color:#e4f1ff;
+	background-image:radial-gradient(circle,#fff 0 3px,transparent 4px),radial-gradient(circle,#b9d8fc 0 2px,transparent 3px),linear-gradient(135deg,#f0f8ff,#d4e7ff);
+	background-size:48px 48px,73px 73px,auto
+}
+.page {
+	position:relative;
+	isolation:isolate;
+	border:4px solid white;
+	box-shadow:0 8px 0 #a9c9ef66,0 18px 40px #5689c51c
+}
+.page::before,.page::after {
+	position:absolute;
+	pointer-events:none;
+	font-size:28px;
+	color:#91bdf4;
+	z-index:-1
+}
+.page::before {
+	content:'✦ ♡';
+	top:14px;
+	left:20px;
+	transform:rotate(-12deg)
+}
+.page::after {
+	content:'♡ ✧';
+	bottom:14px;
+	right:20px;
+	transform:rotate(12deg)
+}
+.intro {
+	max-width:650px;
+	margin:28px auto;
+	padding:28px 24px 22px;
+	background:#f0f7ff;
+	border:2px solid #c7dfff;
+	border-radius:28px;
+	box-shadow:0 5px 0 #dceaff;
+	text-align:center
+}
+.sticker {
+	display:inline-block;
+	background:#d5e7ff;
+	color:#315b96;
+	padding:7px 15px;
+	border-radius:30px;
+	transform:rotate(-3deg);
+	font-size:15px
+}
+.intro h3 {
+	font-size:27px;
+	margin:16px 0 8px
+}
+.intro p {
+	font-size:18px;
+	line-height:1.8;
+	max-width:540px;
+	margin:10px auto 20px;
+	word-break:keep-all
+}
+.features {
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+	gap:9px
+}
+.features span {
+	background:white;
+	border:1px solid #c7dfff;
+	border-radius:20px;
+	padding:9px 14px;
+	color:#3266ad
+}
+.chapter {
+	margin:38px auto 16px
+}
+.chapter span {
+	background:#5288d8;
+	color:white;
+	border-radius:20px;
+	padding:5px 15px;
+	font-size:13px;
+	letter-spacing:1px
+}
+.chapter h3 {
+	font-size:25px;
+	margin:12px 0 5px
+}
+.chapter p {
+	margin:5px 0
+}
+.stage,.formation {
+	box-shadow:inset 0 0 0 5px #ffffffaa
+}
+.choices a {
+	box-shadow:0 5px 0 #c7dfff
+}
+.buttons button,.palette button {
+	box-shadow:0 3px 0 #b7d3f7
+}
+.dark .page::before,.dark .page::after {
+	color:#668bc6
+}
+.encore {
+	color:#b5cff8;
+	letter-spacing:2px
+}
+.dark .theater {
+	border:2px solid #38527c;
+	box-shadow:0 0 35px #6c9ce633
+}
+.dark .page {
+	box-shadow:0 0 60px #385c9b55
+}
+@media(max-width:500px) {
+	.intro {
+		padding:20px 12px
+	}
+	.intro p {
+		font-size:16px
+	}
+	.page::before,.page::after {
+		font-size:18px
+	}
+	.page::before {
+		left:8px
+	}
+	.page::after {
+		right:8px
+	}
+}
+/* 메가폰 호버 효과와 메뉴 열기/닫기 애니메이션 */
+.menuLine .megaphone {
+	width:min(300px,90%);
+	transition:width .6s,transform .25s;
+	position:relative;
+	z-index:1
+}
+.menuLine .megaphone:hover {
+	transform:scale(1.045);
+	filter:drop-shadow(0 5px 8px #83b4f0)
+}
+.menuLine nav {
+	flex:0 1 0;
+	max-width:0;
+	opacity:0;
+	visibility:hidden;
+	transform:scaleX(0);
+	animation:none;
+	transition:flex-basis .6s,max-width .6s,opacity .45s,transform .6s,visibility 0s .6s;
+	pointer-events:none
+}
+.menuLine.opened nav {
+	flex:1 1 68%;
+	max-width:68%;
+	opacity:1;
+	visibility:visible;
+	transform:scaleX(1);
+	transition:flex-basis .6s,max-width .6s,opacity .45s,transform .6s,visibility 0s;
+	pointer-events:auto
+}
+.menuLine nav a {
+	white-space:nowrap
+}
+@media(max-width:500px) {
+	.menuLine.opened nav {
+		flex-basis:70%;
+		max-width:70%
+	}
+}
+/* 별빛 HOME 전환과 파스텔 스티커 디자인 */
+.brand {
+	cursor:default;
+	letter-spacing:1px;
+	color:#3976bd;
+	font-size:clamp(13px,2.5vw,21px)
+}
+.homeButton {
+	display:inline-flex;
+	align-items:center;
+	gap:8px;
+	border:2px solid white;
+	border-radius:24px;
+	background:linear-gradient(135deg,#649de9,#3568bc);
+	box-shadow:0 4px 0 #244f99,0 7px 14px #82a9dc66;
+	transition:transform .2s,box-shadow .2s;
+	white-space:nowrap
+}
+.homeButton:hover {
+	transform:translateY(-3px) rotate(-2deg);
+	box-shadow:0 7px 0 #244f99,0 10px 18px #82a9dc66
+}
+.homeButton:active {
+	transform:translateY(3px);
+	box-shadow:0 1px 0 #244f99
+}
+.house {
+	font-size:28px;
+	line-height:1
+}
+.dark .brand {
+	color:#b9d8ff
+}
+body:not(.dark) .page {
+	background:linear-gradient(155deg,#fff,#f7fbff 70%,#eaf4ff);
+	border-radius:42px;
+	outline:2px dashed #c3ddfb;
+	outline-offset:-10px;
+	padding-top:44px;
+	padding-bottom:44px
+}
+#home {
+	min-height:390px
+}
+.homeDecor {
+	position:absolute;
+	inset:0;
+	pointer-events:none;
+	z-index:-1
+}
+.homeDecor span {
+	position:absolute;
+	font-size:35px;
+	color:#a6cafa;
+	text-shadow:2px 2px white;
+	animation:floatSticker 3s ease-in-out infinite
+}
+.homeDecor span:nth-child(1) {
+	left:12%;
+	top:23%
+}
+.homeDecor span:nth-child(2) {
+	right:12%;
+	top:25%;
+	color:#edb9d1;
+	animation-delay:.5s
+}
+.homeDecor span:nth-child(3) {
+	left:9%;
+	bottom:17%;
+	color:#e8c985;
+	animation-delay:1s
+}
+.homeDecor span:nth-child(4) {
+	right:9%;
+	bottom:14%;
+	animation-delay:1.5s
+}
+@keyframes floatSticker {
+	50% {
+		transform:translateY(-8px) rotate(9deg)
+	}
+}
+body:not(.dark) .tag {
+	display:inline-block;
+	background:#e0efff;
+	border:2px solid white;
+	border-radius:30px;
+	padding:7px 15px;
+	box-shadow:0 3px 0 #c8dff8
+}
+body:not(.dark) h1 {
+	text-shadow:2px 3px #d9eaff
+}
+.intro {
+	background:linear-gradient(145deg,#fff,#eaf4ff);
+	border:2px solid #c7dfff
+}
+.features span:nth-child(2) {
+	background:#fff7e4;
+	border-color:#f1dfb5
+}
+.features span:nth-child(3) {
+	background:#fff0f6;
+	border-color:#f0d0e0
+}
+.choices a {
+	border:3px solid white;
+	outline:2px solid #c5defa;
+	background:linear-gradient(#f8fcff,#e0efff)
+}
+.choices a:nth-child(2) {
+	background:linear-gradient(#fff9fc,#e6efff)
+}
+.menuLine nav a:nth-child(2) {
+	background:#e8f3ff
+}
+.menuLine nav a:nth-child(3) {
+	background:#e1edff
+}
+.menuLine nav a:hover {
+	background:#fff2d8;
+	transform:none
+}
+.buttons button,.next,.file {
+	border-radius:22px
+}
+.stage {
+	background:radial-gradient(circle at 15% 18%,#fff 0 4px,transparent 5px),radial-gradient(circle at 85% 25%,#fff 0 5px,transparent 6px),linear-gradient(#e5f1ff,#fbfdff)
+}
+@media(max-width:500px) {
+	.homeDecor span {
+		font-size:23px
+	}
+	.homeButton {
+		padding:8px 14px;
+		font-size:17px
+	}
+	.house {
+		font-size:22px
+	}
+	body:not(.dark) .page {
+		padding:32px 12px;
+		outline-offset:-6px
+	}
+}
+/* Ver.7: 파스텔 스티커북 디자인 (기능 변경 없음) */
+body:not(.dark) {
+	background-color:#e2efff;
+	background-image:linear-gradient(90deg,#ffffff65 1px,transparent 1px),linear-gradient(#ffffff65 1px,transparent 1px),radial-gradient(ellipse at 10% 20%,#fff4dc,transparent 45%),radial-gradient(ellipse at 90% 70%,#fce3ef,transparent 40%);
+	background-size:24px 24px,24px 24px,auto,auto
+}
+header {
+	background:#f5faffed;
+	border-bottom:2px dashed #a9c9ef;
+	padding-top:15px;
+	padding-bottom:15px
+}
+.brand {
+	letter-spacing:2px
+}
+.homeButton {
+	border-radius:16px;
+	box-shadow:0 4px 0 #244f99,0 0 0 3px #d6e8ff
+}
+main {
+	max-width:960px;
+	margin:28px auto
+}
+.page {
+	overflow:hidden
+}
+body:not(.dark) .page {
+	background:#fffdfb;
+	border:5px solid white;
+	outline:2px dashed #b6d4f7;
+	outline-offset:-12px;
+	box-shadow:0 8px 0 #a9c9ef88,0 18px 40px #5689c52b;
+	padding:48px 30px
+}
+.page::before,.page::after {
+	z-index:0;
+	font-size:22px
+}
+.page::before {
+	content:'✦  ♡  ✧';
+	color:#8db7ed
+}
+.page::after {
+	content:'✧  ♡  ✦';
+	color:#e3a8c3
+}
+#home {
+	min-height:540px;
+	background-image:radial-gradient(ellipse at 50% 52%,#e5f1ff 0%,transparent 65%)
+}
+#home h1 {
+	font-size:clamp(40px,7vw,72px);
+	line-height:1.12;
+	letter-spacing:-1px;
+	text-shadow:3px 4px #d3e6ff, -2px -2px white;
+	margin:25px 0 15px
+}
+#home>p:not(.tag) {
+	color:#5277a6;
+	font-size:19px
+}
+.homeDecor span {
+	font-size:48px
+}
+.homeDecor span:nth-child(1) {
+	left:8%;
+	top:27%
+}
+.homeDecor span:nth-child(2) {
+	right:9%;
+	top:22%
+}
+.homeDecor span:nth-child(3) {
+	left:12%;
+	bottom:12%
+}
+.homeDecor span:nth-child(4) {
+	right:12%;
+	bottom:12%
+}
+.menuLine {
+	margin:42px auto 28px
+}
+.menuLine .megaphone svg {
+	filter:drop-shadow(0 7px 0 #c7ddf7)
+}
+.menuLine nav {
+	border-radius:0 25px 25px 0;
+	background:#d7e8ff
+}
+.menuLine nav a {
+	padding:22px 5px;
+	border-right:2px dashed #b4d1f2
+}
+.menuLine nav a:nth-child(2) {
+	background:#fff0f5
+}
+.menuLine nav a:nth-child(3) {
+	background:#fff5dc
+}
+.menuLine nav a:last-child {
+	background:#d9e6ff
+}
+.menuLine nav a:hover {
+	background:white
+}
+body:not(.dark) .tag {
+	color:#3767a7;
+	background:#e1edff;
+	letter-spacing:2px;
+	padding:8px 20px;
+	transform:rotate(-2deg)
+}
+h2 {
+	color:#315d9c;
+	font-size:clamp(30px,5vw,46px)
+}
+.dark h2 {
+	color:#e0edff
+}
+.intro {
+	position:relative;
+	background:#f1f7ff;
+	border:2px solid #b9d4f5;
+	border-radius:16px;
+	box-shadow:5px 6px 0 #d9e8fb;
+	margin-top:35px
+}
+.intro::before,.intro::after {
+	content:'';
+	position:absolute;
+	width:72px;
+	height:20px;
+	background:repeating-linear-gradient(45deg,#f6d9a6aa 0 6px,#fff0caaa 6px 12px);
+	top:-9px;
+	left:10px;
+	transform:rotate(-12deg);
+	pointer-events:none
+}
+.intro::after {
+	left:auto;
+	right:10px;
+	transform:rotate(12deg)
+}
+.sticker {
+	background:#dceaff;
+	border:2px solid white;
+	box-shadow:0 2px 0 #bfd6f5
+}
+.features span {
+	box-shadow:0 3px 0 #dce8f6
+}
+.chapter {
+	border-top:2px dashed #c8def6;
+	padding-top:24px;
+	max-width:650px
+}
+.chapter span {
+	background:#537fbd;
+	border:2px solid white;
+	box-shadow:0 0 0 2px #d3e4fa
+}
+.stage,.formation {
+	border:3px solid #c3daf7;
+	border-radius:26px;
+	background-color:#eaf4ff;
+	background-image:radial-gradient(circle,#fff 2px,transparent 3px),linear-gradient(155deg,#e2efff,#fff7f9);
+	background-size:23px 23px,auto;
+	box-shadow:inset 0 0 0 5px #fff9,0 5px 0 #dce8f9
+}
+.stage:not(.balanceStage)::after {
+	content:'✧';
+	position:absolute;
+	right:14px;
+	top:10px;
+	color:#83aee6;
+	font-size:30px;
+	pointer-events:none
+}
+.choices {
+	gap:24px;
+	margin:35px auto
+}
+.choices a {
+	position:relative;
+	border-radius:24px;
+	padding:18px 20px 24px;
+	box-shadow:0 7px 0 #c7dfff;
+	outline:2px dashed #b8d2f2;
+	outline-offset:-9px
+}
+.choices a::before {
+	content:'01';
+	position:absolute;
+	top:14px;
+	left:17px;
+	background:#fff;
+	border-radius:50%;
+	padding:8px;
+	color:#5288d8
+}
+.choices a:nth-child(2)::before {
+	content:'02';
+	color:#a85e88
+}
+.choices a h3 {
+	font-size:30px;
+	margin:8px
+}
+.choices a:hover {
+	transform:translateY(-6px) rotate(-1deg)
+}
+.buttons button,.next,.file {
+	border:2px solid #b8d3f5;
+	background:#e6f0ff;
+	box-shadow:0 4px 0 #b7d3f7;
+	border-radius:15px
+}
+.buttons button:active,.next:active {
+	transform:translateY(3px);
+	box-shadow:0 1px 0 #b7d3f7
+}
+.buttons button:hover,.next:hover {
+	background:#fff0d5
+}
+.slot {
+	background:#f6faff;
+	border:2px dashed #a9c9ef;
+	border-radius:16px
+}
+.slot strong {
+	color:#4779bd
+}
+.slot.active,.palette .chosen {
+	background:#c4e0ff
+}
+.palette button {
+	background:#fff8ed;
+	border:2px solid #e9d9b9;
+	border-radius:18px;
+	box-shadow:0 4px 0 #e9d9b9
+}
+.palette button:nth-child(even) {
+	background:#fceef5;
+	border-color:#eacbde;
+	box-shadow:0 4px 0 #eacbde
+}
+.palette button:hover {
+	background:#e3efff
+}
+.note {
+	border:2px dashed #b6d3f4;
+	background:#f1f7ff
+}
+.balanceStage {
+	background-image:linear-gradient(90deg,#ffffff70 1px,transparent 1px),linear-gradient(#ffffff70 1px,transparent 1px),linear-gradient(#e2efff,#f8fbff);
+	background-size:20px 20px,20px 20px,auto
+}
+footer {
+	color:#5277a6
+}
+.dark footer {
+	color:#a9c8f0
+}
+.dark .theater {
+	border:3px solid #5578ae;
+	box-shadow:0 0 30px #749de544,inset 0 0 0 5px #1d3050
+}
+.dark .page {
+	outline:2px dashed #42608c;
+	outline-offset:-10px
+}
+@media(max-width:500px) {
+	main {
+		margin:10px auto;
+		padding:10px
+	}
+	body:not(.dark) .page {
+		padding:35px 12px;
+		outline-offset:-7px
+	}
+	#home {
+		min-height:410px
+	}
+	.homeDecor span {
+		font-size:25px
+	}
+	.menuLine nav a {
+		padding:12px 2px
+	}
+	.choices {
+		gap:18px
+	}
+	.intro::before,.intro::after {
+		width:45px
+	}
+	.palette button {
+		padding:3px
+	}
+	.buttons {
+		gap:9px
+	}
+}

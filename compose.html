@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PLAY CHEERLEADING</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer>
+</script>
+</head>
+<body>
+<header>
+<span class="brand">✦ PLAY CHEERLEADING</span>
+<a class="homeButton" href="index.html">
+<span class="house">⌂</span> HOME</a>
+</header>
+<main>
+<section id="compose" class="page">
+<p class="tag">ACTION GAME ♫</p>
+<h2>나만의 8카운트 안무</h2>
+<p>동작 카드를 원하는 카운트에 끌어다 놓으세요. 같은 동작도 여러 번 사용할 수 있어요! 정지 버튼을 누를 때까지 안무가 반복돼요.</p>
+<div class="stage" id="composeFigure">
+</div>
+<h3 id="count" aria-live="polite">READY!</h3>
+<div id="slots" class="slots">
+</div>
+<div id="palette" class="palette">
+</div>
+<div class="buttons">
+<button onclick="randomMusic()">♫ 랜덤 음악</button>
+<label>속도 <input id="bpm" type="number" min="40" max="240" value="120"> BPM</label>
+<label class="file">MP3 선택 <input id="musicFile" type="file" accept="audio/mpeg,audio/*">
+</label>
+</div>
+<audio id="music" preload="none">
+</audio>
+<p id="musicStatus">랜덤 음악 또는 MP3를 선택하세요.</p>
+<div class="buttons">
+<button onclick="playDance()">▶ 공연 재생</button>
+<button onclick="stopDance()">■ 정지</button>
+<button onclick="resetDance()">다시 구성</button>
+</div>
+<a class="next" href="game.html">← 게임 선택하기</a>
+</section>
+</main>
+<footer>♡ PLAY · CHEER UP TOGETHER ♡</footer>
+</body>
+</html>
